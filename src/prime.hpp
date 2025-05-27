@@ -20,8 +20,7 @@ private:
     std::string op;
     size_t id;
     std::vector<ValuePtr> prev;
-    void topo_sort(vector<ValuePtr>& topo, unordered_set<Value*>& visited);
-
+    
 public:
     Value(float data, const std::string &op, size_t id);
     ~Value();
@@ -43,6 +42,10 @@ public:
     static ValuePtr sub(const ValuePtr& lhs, const ValuePtr& rhs);
     static ValuePtr mult(const ValuePtr& lhs, const ValuePtr& rhs);
     static ValuePtr exp(const ValuePtr& base, const ValuePtr& power);
+
     function<void()> _backward;
     void backward();
+    void topo_sort(vector<ValuePtr>& topo, unordered_set<Value*>& visited);
+    void dump_to_dot(const vector<ValuePtr>& topo, const string& filename);
+    
 };
