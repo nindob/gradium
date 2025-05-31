@@ -11,5 +11,5 @@ A neural network framework from scratch in C++ to understand the fundamentals of
     - Computational Graph Optimization
 
 To Run:
-g++ -std=c++20 main.cpp prime.cpp loss.cpp mat.cpp -o gradium
+g++ -std=c++20 main.cpp nn.cpp optim.cpp prime.cpp tensor.cpp loss.cpp -o gradium
 ./gradium
